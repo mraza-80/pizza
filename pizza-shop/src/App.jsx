@@ -1,35 +1,98 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const pizzaData = [
+    {
+      name: "Focaccia",
+      ingredients: "Bread with italian olive oil and rosemary",
+      price: 6,
+      photoName: "pizzas/focaccia.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Margherita",
+      ingredients: "Tomato and mozarella",
+      price: 10,
+      photoName: "pizzas/margherita.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Spinaci",
+      ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
+      price: 12,
+      photoName: "pizzas/spinaci.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Funghi",
+      ingredients: "Tomato, mozarella, mushrooms, and onion",
+      price: 12,
+      photoName: "pizzas/funghi.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Salamino",
+      ingredients: "Tomato, mozarella, and pepperoni",
+      price: 15,
+      photoName: "pizzas/salamino.jpg",
+      soldOut: true,
+    },
+    {
+      name: "Pizza Prosciutto",
+      ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
+      price: 18,
+      photoName: "pizzas/prosciutto.jpg",
+      soldOut: false,
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Header />
+      <Menu />
+      <Footer />
+
+    </div>
   )
 }
 
+function Header() {
+  return <p>
+    Pizza shop in Borlänge</p>
+
+
+
+}
+function Menu() {
+  return
+  <div className='pizzas'>
+    <h2> Menu</h2>
+
+  </div>
+}
+
+
+
+function Pizza() {
+
+  return <div>
+
+    <h3>Pizza Spinaci</h3>
+    <span>Tomato, mozarella, and pepperoni</span>
+    <p>18</p>
+
+  </div>
+}
+
+
+function Footer() {
+
+  return
+  <div className='footer'>
+    <span>{new Date().getHours()
+    }</span>
+  </div>
+}
 export default App
